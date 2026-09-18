@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Schema Forge">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220">
+        <animate attributeName="stop-color" values="#0b1220;#101a2e;#0b1220" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="55%" stop-color="#13233f">
+        <animate attributeName="stop-color" values="#13233f;#1a3358;#13233f" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0e1c18">
+        <animate attributeName="stop-color" values="#0e1c18;#143028;#0e1c18" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3ddc97"/>
+      <stop offset="50%" stop-color="#5eead4"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="nodeGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1f3b5a"/>
+      <stop offset="100%" stop-color="#10243a"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e314d" stroke-width="1" opacity="0.45"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="360" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="24" fill="url(#grid)" opacity="0.55"/>
+
+  <!-- floating orbs -->
+  <circle cx="180" cy="90" r="48" fill="#3ddc97" opacity="0.08" filter="url(#softGlow)">
+    <animate attributeName="cy" values="90;110;90" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1020" cy="250" r="70" fill="#38bdf8" opacity="0.08" filter="url(#softGlow)">
+    <animate attributeName="cy" values="250;220;250" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="900" cy="70" r="28" fill="#5eead4" opacity="0.12">
+    <animate attributeName="r" values="28;36;28" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- brand mark -->
+  <g transform="translate(70,78)">
+    <rect x="0" y="0" width="72" height="72" rx="18" fill="#10253d" stroke="url(#accent)" stroke-width="2"/>
+    <path d="M18 48 L36 18 L54 48 Z" fill="none" stroke="#5eead4" stroke-width="3" stroke-linejoin="round">
+      <animate attributeName="opacity" values="0.55;1;0.55" dur="2.4s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="36" cy="40" r="4" fill="#3ddc97">
+      <animate attributeName="r" values="3;5;3" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <text x="160" y="118" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="54" font-weight="700" fill="#f8fafc">
+    Schema Forge
+  </text>
+  <text x="162" y="158" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="20" fill="#94a3b8">
+    Schema-aware synthetic data  valid by construction
+  </text>
+
+  <!-- animated underline -->
+  <rect x="162" y="172" width="0" height="3" rx="2" fill="url(#accent)">
+    <animate attributeName="width" values="0;420;420;0" keyTimes="0;0.35;0.75;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- relationship graph preview -->
+  <g transform="translate(720,70)">
+    <!-- edges -->
+    <path id="e1" d="M70 40 C120 40, 120 100, 170 100" fill="none" stroke="#334155" stroke-width="2"/>
+    <path id="e2" d="M70 160 C120 160, 120 100, 170 100" fill="none" stroke="#334155" stroke-width="2"/>
+    <path id="e3" d="M250 100 C300 100, 300 60, 350 60" fill="none" stroke="#334155" stroke-width="2"/>
+    <path id="e4" d="M250 100 C300 100, 300 140, 350 140" fill="none" stroke="#334155" stroke-width="2"/>
+
+    <!-- traveling pulses -->
+    <circle r="4" fill="#3ddc97" filter="url(#softGlow)">
+      <animateMotion dur="2.2s" repeatCount="indefinite" path="M70 40 C120 40, 120 100, 170 100"/>
+    </circle>
+    <circle r="4" fill="#38bdf8" filter="url(#softGlow)">
+      <animateMotion dur="2.6s" repeatCount="indefinite" path="M70 160 C120 160, 120 100, 170 100"/>
+    </circle>
+    <circle r="4" fill="#5eead4" filter="url(#softGlow)">
+      <animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite" path="M250 100 C300 100, 300 60, 350 60"/>
+    </circle>
+    <circle r="4" fill="#3ddc97" filter="url(#softGlow)">
+      <animateMotion dur="2.8s" begin="0.7s" repeatCount="indefinite" path="M250 100 C300 100, 300 140, 350 140"/>
+    </circle>
+
+    <!-- nodes -->
+    <g>
+      <rect x="10" y="18" width="100" height="44" rx="12" fill="url(#nodeGlow)" stroke="#3ddc97" stroke-width="1.5"/>
+      <text x="60" y="46" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#e2e8f0">country</text>
+    </g>
+    <g>
+      <rect x="10" y="138" width="100" height="44" rx="12" fill="url(#nodeGlow)" stroke="#38bdf8" stroke-width="1.5"/>
+      <text x="60" y="166" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#e2e8f0">seller</text>
+    </g>
+    <g>
+      <rect x="170" y="78" width="100" height="44" rx="12" fill="url(#nodeGlow)" stroke="#5eead4" stroke-width="1.5">
+        <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="220" y="106" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#e2e8f0">product</text>
+    </g>
+    <g>
+      <rect x="340" y="38" width="100" height="44" rx="12" fill="url(#nodeGlow)" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="390" y="66" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#e2e8f0">order</text>
+    </g>
+    <g>
+      <rect x="340" y="118" width="100" height="44" rx="12" fill="url(#nodeGlow)" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="390" y="146" text-anchor="middle" font-family="Consolas, monospace" font-size="13" fill="#e2e8f0">review</text>
+    </g>
+  </g>
+
+  <!-- pillar chips -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#cbd5e1">
+    <g transform="translate(162,210)">
+      <rect width="150" height="34" rx="17" fill="#122033" stroke="#234056"/>
+      <circle cx="18" cy="17" r="5" fill="#3ddc97">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <text x="34" y="22">Schema Graph</text>
+    </g>
+    <g transform="translate(328,210)">
+      <rect width="170" height="34" rx="17" fill="#122033" stroke="#234056"/>
+      <circle cx="18" cy="17" r="5" fill="#38bdf8">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="0.3s" repeatCount="indefinite"/>
+      </circle>
+      <text x="34" y="22">FK Integrity</text>
+    </g>
+    <g transform="translate(514,210)">
+      <rect width="170" height="34" rx="17" fill="#122033" stroke="#234056"/>
+      <circle cx="18" cy="17" r="5" fill="#5eead4">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <text x="34" y="22">Zipf / Normal</text>
+    </g>
+    <g transform="translate(162,258)">
+      <rect width="190" height="34" rx="17" fill="#122033" stroke="#234056"/>
+      <circle cx="18" cy="17" r="5" fill="#a78bfa">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="0.9s" repeatCount="indefinite"/>
+      </circle>
+      <text x="34" y="22">Constraint Safe</text>
+    </g>
+    <g transform="translate(368,258)">
+      <rect width="200" height="34" rx="17" fill="#122033" stroke="#234056"/>
+      <circle cx="18" cy="17" r="5" fill="#fbbf24">
+        <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="34" y="22">Deterministic Seeds</text>
+    </g>
+  </g>
+</svg>

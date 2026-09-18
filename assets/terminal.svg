@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="48" viewBox="0 0 680 48">
+  <rect width="680" height="48" rx="8" fill="#0b1220"/>
+  <text font-family="Consolas, Monaco, monospace" font-size="16" fill="#3ddc97" x="18" y="30">
+    <tspan>$ </tspan>
+    <tspan fill="#e2e8f0">python run_synth_engine.py --inspect</tspan>
+    <tspan fill="#64748b">
+      <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+      ç
+    </tspan>
+  </text>
+</svg>

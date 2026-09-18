@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" role="img" aria-label="Generation pipeline">
+  <defs>
+    <linearGradient id="pipe" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3ddc97"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="220" rx="18" fill="#0b1220"/>
+  <text x="28" y="42" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#e2e8f0">
+    Generation pipeline
+  </text>
+
+  <!-- connector -->
+  <path d="M90 120 H810" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M90 120 H810" stroke="url(#pipe)" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 18">
+    <animate attributeName="stroke-dashoffset" from="0" to="-64" dur="1.6s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- stages -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif">
+    <g transform="translate(40,85)">
+      <rect width="120" height="70" rx="14" fill="#122033" stroke="#3ddc97"/>
+      <text x="60" y="32" text-anchor="middle" font-size="13" fill="#94a3b8">1</text>
+      <text x="60" y="52" text-anchor="middle" font-size="14" font-weight="600" fill="#f1f5f9">Introspect</text>
+    </g>
+    <g transform="translate(210,85)">
+      <rect width="120" height="70" rx="14" fill="#122033" stroke="#5eead4"/>
+      <text x="60" y="32" text-anchor="middle" font-size="13" fill="#94a3b8">2</text>
+      <text x="60" y="52" text-anchor="middle" font-size="14" font-weight="600" fill="#f1f5f9">Topo-sort</text>
+    </g>
+    <g transform="translate(380,85)">
+      <rect width="120" height="70" rx="14" fill="#122033" stroke="#38bdf8"/>
+      <text x="60" y="32" text-anchor="middle" font-size="13" fill="#94a3b8">3</text>
+      <text x="60" y="52" text-anchor="middle" font-size="14" font-weight="600" fill="#f1f5f9">Constrain</text>
+    </g>
+    <g transform="translate(550,85)">
+      <rect width="120" height="70" rx="14" fill="#122033" stroke="#a78bfa"/>
+      <text x="60" y="32" text-anchor="middle" font-size="13" fill="#94a3b8">4</text>
+      <text x="60" y="52" text-anchor="middle" font-size="14" font-weight="600" fill="#f1f5f9">Distribute</text>
+    </g>
+    <g transform="translate(720,85)">
+      <rect width="120" height="70" rx="14" fill="#122033" stroke="#fbbf24"/>
+      <text x="60" y="32" text-anchor="middle" font-size="13" fill="#94a3b8">5</text>
+      <text x="60" y="52" text-anchor="middle" font-size="14" font-weight="600" fill="#f1f5f9">Seed &amp; Emit</text>
+    </g>
+  </g>
+
+  <!-- pulse -->
+  <circle r="7" fill="#3ddc97">
+    <animateMotion dur="3.2s" repeatCount="indefinite" path="M90 120 H810"/>
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

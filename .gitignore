@@ -1,5 +1,10 @@
 # Python cache
 __pycache__/
+synth_engine/__pycache__/
 
 # Environment variables
 .env
+
+# Local dry-run dumps
+_dry_run.json
+*.dry.json
